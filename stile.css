@@ -9,12 +9,71 @@ button {
     font-family: var(--button-text-stile);
     font-size: 14px;
 }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
 h1, h2 {
     color: var(--heading-color);
 }
-a {
-    color: var(--link-color);
+.container {
+    display: grid;
+    width: 90vw;
+    height: 100vh;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 10% 20% 55% 5%;
+    gap: 0;
 }
-p{
-    color:var(--text-color);
+.div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+.headd {
+    background-color: orange;
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+}
+.select_lvl {
+    background-color: blue;
+    grid-row: 2 / 4;
+    flex-direction: column;
+    padding: 20px;
+}
+.select_lvl li{
+    margin-top: 10px;
+}
+.game {
+    background-color: purple;
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    flex-direction: column;
+    padding: 20px;
+}
+.theme {
+    background-color: yellow;
+    grid-column: 3 / 4;
+    padding: 20px;
+}
+.res {
+    background-color: #00ff15;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    padding: 20px;
+}
+.Basement {
+    grid-row: 4 / 5;
+    background-color: pink;
+    grid-column: 1 / -1;
+    color: black;
 }
