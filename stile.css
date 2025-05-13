@@ -7,7 +7,7 @@
 }
 button {
     font-family: var(--button-text-stile);
-    font-size: 14px;
+    font-size: 10px;
 }
 body {
     display: flex;
@@ -20,6 +20,12 @@ body {
 h1, h2 {
     color: var(--heading-color);
 }
+h1 {
+    font-size: 24px;
+}
+h2 {
+    font-size: 16px;
+}
 .container {
     display: grid;
     width: 90vw;
@@ -28,27 +34,23 @@ h1, h2 {
     grid-template-rows: 10% 20% 55% 5%;
     gap: 0;
 }
-.div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
-}
 .headd {
     background-color: orange;
     grid-column: 1 / -1;
     text-align: center;
     font-size: 16px;
     font-weight: bold;
-    padding: 10px;
 }
 .select_lvl {
+    display: flex;
     background-color: blue;
+    text-align: center;
     grid-row: 2 / 4;
     flex-direction: column;
-    padding: 20px;
+    padding: 5px;
+}
+.select_lvl ul {
+    padding-inline-start:20px;
 }
 .select_lvl li{
     margin-top: 10px;
@@ -57,23 +59,67 @@ h1, h2 {
     background-color: purple;
     grid-column: 2 / 3;
     grid-row: 2 / 4;
-    flex-direction: column;
     padding: 20px;
 }
 .theme {
     background-color: yellow;
     grid-column: 3 / 4;
-    padding: 20px;
+    padding: 5px;
+}
+.controls {
+    margin: 10px;
 }
 .res {
     background-color: #00ff15;
     grid-column: 3 / 4;
     grid-row: 3 / 4;
-    padding: 20px;
+    padding: 5px;
 }
 .Basement {
     grid-row: 4 / 5;
     background-color: pink;
     grid-column: 1 / -1;
     color: black;
+}
+@media (max-device-width:600px) {
+    .container{
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5% 10% 75% 10%;
+    }
+    .headd, .select_lvl, .game, .res {
+        grid-column: 1 / -1;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .headd {
+        grid-row: 1 / 2;
+    }
+    .select_lvl {
+        grid-row: 2 / 3;
+    }
+    .select_lvl ul {
+        display: flex;
+        flex-direction: row;
+    }
+    .select_lvl li{
+    margin: auto;
+}
+    button {
+        font-size: 1.5em;
+    }
+    .game {
+        grid-row: 3 / 4;
+    }
+    .res {
+        grid-row: 4 / 5;
+    }
+    .theme, .Basement {
+        display: none;
+    }
 }
