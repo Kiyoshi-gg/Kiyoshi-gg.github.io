@@ -1,10 +1,22 @@
 :root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --heading-color: #000000;
     --link-color: #0080ff;
     --button-text-stile: cursive;
 }
+html[theme="light"]{
+    --bg-color:#ffffff;
+    --block-color:#eeeeee85;
+    --border-color:#000000;
+    --text-color:#000000;
+    --heading-color:#000000;
+}
+html[theme="dark"]{
+    --bg-color:#202020;
+    --block-color:#38383885;
+    --border-color:#f8f8f8;
+    --text-color:#cecece;
+    --heading-color:#cecece;
+}
+
 button {
     font-family: var(--button-text-stile);
     font-size: 10px;
@@ -26,16 +38,25 @@ h1 {
 h2 {
     font-size: 16px;
 }
+p {
+    margin: 0;
+    padding: 5px;
+
+}
 .container {
     display: grid;
-    width: 90vw;
+    width: 100vw;
     height: 100vh;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 10% 20% 55% 5%;
-    gap: 0;
+    gap: 10px;
+}
+.headd, .select_lvl, .game, .theme, .res, .Basement {
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
 }
 .headd {
-    background-color: orange;
+    background-color:var(--block-color);
     grid-column: 1 / -1;
     text-align: center;
     font-size: 16px;
@@ -43,7 +64,7 @@ h2 {
 }
 .select_lvl {
     display: flex;
-    background-color: blue;
+    background-color: var(--block-color);
     text-align: center;
     grid-row: 2 / 4;
     flex-direction: column;
@@ -51,18 +72,19 @@ h2 {
 }
 .select_lvl ul {
     padding-inline-start:20px;
+    margin: 0;
 }
 .select_lvl li{
     margin-top: 10px;
 }
 .game {
-    background-color: purple;
+    background-color: var(--block-color);
     grid-column: 2 / 3;
     grid-row: 2 / 4;
     padding: 20px;
 }
 .theme {
-    background-color: yellow;
+    background-color: var(--block-color);
     grid-column: 3 / 4;
     padding: 5px;
 }
@@ -70,16 +92,16 @@ h2 {
     margin: 10px;
 }
 .res {
-    background-color: #00ff15;
+    background-color: var(--block-color);
     grid-column: 3 / 4;
     grid-row: 3 / 4;
     padding: 5px;
 }
 .Basement {
     grid-row: 4 / 5;
-    background-color: pink;
+    background-color: var(--block-color);
     grid-column: 1 / -1;
-    color: black;
+    
 }
 @media (max-device-width:600px) {
     .container{
