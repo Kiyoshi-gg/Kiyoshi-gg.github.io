@@ -19,7 +19,14 @@ html[theme="dark"]{
 
 button {
     font-family: var(--button-text-stile);
-    font-size: 10px;
+    font-size: 16px;
+    margin: 10px;
+}
+canvas {
+    border: 1px solid var(--border-color);
+}
+#gameBoard {
+    display: none;
 }
 body {
     display: flex;
@@ -33,12 +40,13 @@ h1, h2 {
     color: var(--heading-color);
 }
 h1 {
-    font-size: 24px;
+    font-size: 32px;
 }
 h2 {
-    font-size: 16px;
+    font-size: 20px;
 }
 p {
+    font-size: 16px;
     margin: 0;
     padding: 5px;
 
@@ -61,6 +69,7 @@ p {
     text-align: center;
     font-size: 16px;
     font-weight: bold;
+    padding: 10px;
 }
 .select_lvl {
     display: flex;
@@ -74,9 +83,7 @@ p {
     padding-inline-start:20px;
     margin: 0;
 }
-.select_lvl li{
-    margin-top: 10px;
-}
+
 .game {
     background-color: var(--block-color);
     grid-column: 2 / 3;
@@ -84,6 +91,7 @@ p {
     padding: 20px;
 }
 .theme {
+    text-align: center;
     background-color: var(--block-color);
     grid-column: 3 / 4;
     padding: 5px;
@@ -92,6 +100,7 @@ p {
     margin: 10px;
 }
 .res {
+    text-align: center;
     background-color: var(--block-color);
     grid-column: 3 / 4;
     grid-row: 3 / 4;
@@ -101,6 +110,7 @@ p {
     grid-row: 4 / 5;
     background-color: var(--block-color);
     grid-column: 1 / -1;
+    padding: 10px;
     
 }
 @media (max-device-width:600px) {
