@@ -58,6 +58,7 @@ const lvls = {
 
 function drawBoard(lvl) {
   const board = lvls[lvl];
+  const end = finish[lvl];
   canvas.style.display = "block";
   ctx.clearRect(0,0,canvas.width,canvas.height);
   for (let y = 0; y < board.length; y++) {
@@ -69,6 +70,10 @@ function drawBoard(lvl) {
       }
       ctx.fillRect(x * CELL, y * CELL, CELL, CELL);
     }
+  }
+  if (end) {
+    ctx.fillStyle = "#F08080";
+    ctx.fillRect(end.x * CELL, end.y * CELL, CELL, CELL);
   }
 }
 document.getElementById("1lvl").addEventListener("click", () => drawBoard(1));
