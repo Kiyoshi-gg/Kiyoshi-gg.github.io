@@ -100,6 +100,10 @@ canvas.addEventListener("click", (e) => {
     selectFigure = null;
   }
   drawBoard(lvl);
+  if (selectFigure) {
+  ctx.fillStyle = "#00FF7F";
+  ctx.fillRect(selectFigure.x * CELL, selectFigure.y * CELL, CELL, CELL);
+}
   drawFigure();
 });
 

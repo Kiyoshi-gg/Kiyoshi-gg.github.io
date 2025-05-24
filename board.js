@@ -64,7 +64,7 @@ function drawBoard(lvl) {
   for (let y = 0; y < board.length; y++) {
     for (let x = 0; x < board[y].length; x++) {
       if (board[y][x]) {
-        ctx.fillStyle = (x + y) % 2 === 0 ? "#ffffff" : "#000000";
+        ctx.fillStyle = (x + y) % 2 === 0 ? "#ffffff" : "#8B4513";
       } else {
         ctx.fillStyle = "#DEB887";
       }
