@@ -1,6 +1,11 @@
 :root {
     --link-color: #0080ff;
     --button-text-stile: cursive;
+    --bg-color:#ffffff;
+    --block-color:#eeeeee85;
+    --border-color:#000000;
+    --text-color:#000000;
+    --heading-color:#000000;
 }
 html[theme="light"]{
     --bg-color:#ffffff;
@@ -15,6 +20,20 @@ html[theme="dark"]{
     --border-color:#f8f8f8;
     --text-color:#cecece;
     --heading-color:#cecece;
+}
+
+.progres {
+    height: 30px;
+    width: 400px;
+    background-color:#808080;
+    border-radius: 12px;
+}
+
+#bar {
+    height: 100%;
+    width: 0%;
+    background-color: #7B68EE;
+    border-radius: 12px 0 0 12px;
 }
 
 button {

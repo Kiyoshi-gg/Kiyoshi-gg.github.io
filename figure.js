@@ -40,6 +40,13 @@ class Figure {
     }
   }
 }
+
+let compliteLvl = new Set();
+function update() {
+  const progres = (compliteLvl.size / 5) * 100;
+  document.getElementById("bar").style.width = `${progres}%`;
+}
+
 function unlock (level) {
   const button = document.getElementById(`${level}lvl`);
   if (button) {
@@ -86,6 +93,8 @@ canvas.addEventListener("click", (e) => {
       if (end && selectFigure.x === end.x && selectFigure.y === end.y) {
   setTimeout(() => {
     alert(`Уровень ${lvl} пройден!`);
+    compliteLvl.add(lvl);
+    update();
     if (lvl < 5) {
       lvl++;
       unlock(lvl);
