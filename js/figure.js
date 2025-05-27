@@ -1,6 +1,7 @@
 let selectFigure = null; 
 let lvl = 1;
 const figure = []; 
+let move = 0;
 
 class Figure {
   constructor(type, x, y) {
@@ -53,6 +54,28 @@ function unlock (level) {
     button.disabled = false;
   }
 }
+
+function BestScore (level, moves) {
+  const key = `bestScore${level}`;
+  const best = localStorage.getItem(key);
+  if (best === null || moves < Number(best)) {
+    localStorage.setItem(key, moves);
+  }
+}
+function getBS (level) {
+  const key = `bestScore${level}`;
+  return localStorage.getItem(key);
+}
+function updateScore (level) {
+  const best = getBS(level);
+  const el = document.getElementById(`bestScore`);
+  if (best === null) {
+    el.textContent = "-";
+  } else {
+    el.textContent = best;
+  }
+}
+
 function pathClear(piece, x, y) {
   let dx = Math.sign(x - piece.x);
   let dy = Math.sign(y - piece.y);
@@ -88,12 +111,14 @@ canvas.addEventListener("click", (e) => {
   } else if (selectFigure && selectFigure.canMoveTo(x, y)) { 
     selectFigure.x = x;
     selectFigure.y = y;
+    move++;
     if (selectFigure.type == "king") {
       const end = finish[lvl];
       if (end && selectFigure.x === end.x && selectFigure.y === end.y) {
   setTimeout(() => {
-    alert(`Уровень ${lvl} пройден!`);
+    alert(`Уровень ${lvl} пройден за ${move} ходов`);
     compliteLvl.add(lvl);
+    BestScore(lvl,move);
     update();
     if (lvl < 5) {
       lvl++;
@@ -195,6 +220,7 @@ function handleLevelClick(levels) {
   drawBoard(levels);
   setupLevelFigure(levels);
   drawFigure();
+  updateScore(levels);
 };
 document.getElementById("1lvl").addEventListener("click", () => handleLevelClick(1));
 document.getElementById("2lvl").addEventListener("click", () => handleLevelClick(2));

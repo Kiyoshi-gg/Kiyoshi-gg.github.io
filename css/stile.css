@@ -22,6 +22,11 @@ html[theme="dark"]{
     --heading-color:#cecece;
 }
 
+img {
+    width: 50px;
+    height: 50px;
+}
+
 .progres {
     height: 30px;
     width: 400px;
