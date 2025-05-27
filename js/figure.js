@@ -1,7 +1,13 @@
 let selectFigure = null; 
 let lvl = 1;
 const figure = []; 
-let move = 0;
+const move = {
+  1: 0,
+  2: 0,
+  3: 0,
+  4: 0,
+  5: 0
+};
 
 class Figure {
   constructor(type, x, y) {
@@ -111,14 +117,14 @@ canvas.addEventListener("click", (e) => {
   } else if (selectFigure && selectFigure.canMoveTo(x, y)) { 
     selectFigure.x = x;
     selectFigure.y = y;
-    move++;
+    move[lvl]++;
     if (selectFigure.type == "king") {
       const end = finish[lvl];
       if (end && selectFigure.x === end.x && selectFigure.y === end.y) {
   setTimeout(() => {
-    alert(`Уровень ${lvl} пройден за ${move} ходов`);
+    alert(`Уровень ${lvl} пройден за ${move[lvl]} ходов`);
     compliteLvl.add(lvl);
-    BestScore(lvl,move);
+    BestScore(lvl,move[lvl]);
     update();
     if (lvl < 5) {
       lvl++;
@@ -217,6 +223,7 @@ const finish = {
 
 function handleLevelClick(levels) {
   lvl = levels;
+  move[levels]=0;
   drawBoard(levels);
   setupLevelFigure(levels);
   drawFigure();
