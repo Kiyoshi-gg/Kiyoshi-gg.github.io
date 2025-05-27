@@ -1,7 +1,7 @@
 const canvas = document.getElementById("gameBoard");
 const ctx = canvas.getContext("2d");
 
-const CELL = 75;
+const CELL = 60;
 
 const lvls = { 
   1:[

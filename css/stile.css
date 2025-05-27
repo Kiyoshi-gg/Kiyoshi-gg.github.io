@@ -182,4 +182,7 @@ p {
     .theme, .Basement {
         display: none;
     }
+    .res h2:first-of-type, .progres, #icon {
+        display: none;
+    }
 }
